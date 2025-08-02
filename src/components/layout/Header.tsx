@@ -1,13 +1,34 @@
 'use client';
 
 import Link from 'next/link';
-import { ShoppingCart, User, Menu, Search } from 'lucide-react';
-import { useState } from 'react';
+import { ShoppingCart, User, Menu, Search, LogOut } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { useCart } from '@/contexts/CartContext';
+import { useSession, signOut } from 'next-auth/react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showUserMenu, setShowUserMenu] = useState(false);
   const { getTotalItems, setIsOpen } = useCart();
+  const { data: session } = useSession();
+
+  // Close user menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest('.user-menu-container')) {
+        setShowUserMenu(false);
+      }
+    };
+
+    if (showUserMenu) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [showUserMenu]);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
@@ -48,9 +69,77 @@ export default function Header() {
             <button className="p-2" aria-label="Search">
               <Search className="h-5 w-5" />
             </button>
-            <Link href="/auth/login" className="p-2" aria-label="Account">
-              <User className="h-5 w-5" />
-            </Link>
+            <div className="relative user-menu-container">
+              <button
+                onClick={() => setShowUserMenu(!showUserMenu)}
+                className="p-2"
+                aria-label="Account"
+              >
+                <User className="h-5 w-5" />
+              </button>
+              {showUserMenu && (
+                <div className="absolute right-0 mt-2 w-48 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+                  <div className="py-1">
+                    {session ? (
+                      <>
+                        <div className="px-4 py-2 text-sm text-neutral-700">
+                          {session.user?.email}
+                        </div>
+                        <hr className="my-1" />
+                        <Link
+                          href="/account"
+                          className="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100"
+                          onClick={() => setShowUserMenu(false)}
+                        >
+                          My Account
+                        </Link>
+                        <Link
+                          href="/orders"
+                          className="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100"
+                          onClick={() => setShowUserMenu(false)}
+                        >
+                          My Orders
+                        </Link>
+                        {session.user?.role === 'ADMIN' && (
+                          <Link
+                            href="/admin"
+                            className="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100"
+                            onClick={() => setShowUserMenu(false)}
+                          >
+                            Admin Dashboard
+                          </Link>
+                        )}
+                        <hr className="my-1" />
+                        <button
+                          onClick={() => signOut()}
+                          className="flex w-full items-center gap-2 px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100"
+                        >
+                          <LogOut className="h-4 w-4" />
+                          Sign Out
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <Link
+                          href="/auth/login"
+                          className="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100"
+                          onClick={() => setShowUserMenu(false)}
+                        >
+                          Sign In
+                        </Link>
+                        <Link
+                          href="/auth/register"
+                          className="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100"
+                          onClick={() => setShowUserMenu(false)}
+                        >
+                          Create Account
+                        </Link>
+                      </>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
             <button
               onClick={() => setIsOpen(true)}
               className="relative p-2"
