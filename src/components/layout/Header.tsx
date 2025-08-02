@@ -3,9 +3,11 @@
 import Link from 'next/link';
 import { ShoppingCart, User, Menu, Search } from 'lucide-react';
 import { useState } from 'react';
+import { useCart } from '@/contexts/CartContext';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { getTotalItems, setIsOpen } = useCart();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
@@ -49,12 +51,18 @@ export default function Header() {
             <Link href="/auth/login" className="p-2" aria-label="Account">
               <User className="h-5 w-5" />
             </Link>
-            <Link href="/cart" className="relative p-2" aria-label="Cart">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="relative p-2"
+              aria-label="Cart"
+            >
               <ShoppingCart className="h-5 w-5" />
-              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-neutral-900 text-xs text-white">
-                0
-              </span>
-            </Link>
+              {getTotalItems() > 0 && (
+                <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-neutral-900 text-xs text-white">
+                  {getTotalItems()}
+                </span>
+              )}
+            </button>
           </div>
         </div>
       </div>

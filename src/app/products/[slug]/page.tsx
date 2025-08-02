@@ -6,6 +6,7 @@ import { useParams } from 'next/navigation';
 import { ChevronLeft, ChevronRight, Star, ShoppingCart, Heart, Minus, Plus } from 'lucide-react';
 import { formatCurrency } from '@/utils/format';
 import ProductCard from '@/components/products/ProductCard';
+import { useCart } from '@/contexts/CartContext';
 
 interface ProductImage {
   id: string;
@@ -63,6 +64,7 @@ interface Product {
 
 export default function ProductDetailPage() {
   const params = useParams();
+  const { addItem } = useCart();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
@@ -99,11 +101,16 @@ export default function ProductDetailPage() {
   };
 
   const handleAddToCart = () => {
-    // TODO: Implement add to cart functionality
-    console.log('Add to cart:', {
-      productId: product?.id,
+    if (!product) return;
+
+    addItem({
+      productId: product.id,
       variantId: selectedVariant?.id,
       quantity,
+      name: product.name,
+      price: selectedVariant?.price || product.price,
+      image: product.images[0]?.url,
+      variantName: selectedVariant?.name,
     });
   };
 
