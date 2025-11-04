@@ -3,6 +3,8 @@ import { auth } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 import { OrderStatus } from '@/generated/prisma';
 
+export const runtime = 'nodejs';
+
 export async function PATCH(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
