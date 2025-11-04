@@ -15,7 +15,8 @@ async function main() {
       firstName: 'Admin',
       lastName: 'User',
       role: 'ADMIN',
-      emailVerified: new Date(),
+      emailVerified: new Date() // sets it to the current date/time
+
     },
   });
 
@@ -28,7 +29,8 @@ async function main() {
       firstName: 'John',
       lastName: 'Doe',
       role: 'CUSTOMER',
-      emailVerified: new Date(),
+     emailVerified: new Date() // sets it to the current date/time
+
     },
   });
 
