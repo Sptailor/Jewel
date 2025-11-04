@@ -1,6 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
+
+export const dynamic = 'force-dynamic';
 import { useSearchParams } from 'next/navigation';
 import ProductCard from '@/components/products/ProductCard';
 import { ChevronDown } from 'lucide-react';
@@ -24,7 +26,7 @@ const sortOptions = [
   { value: 'name-asc', label: 'Name: A to Z' },
 ];
 
-export default function ProductsPage() {
+function ProductsContent() {
   const searchParams = useSearchParams();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
@@ -140,5 +142,32 @@ export default function ProductsPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={
+      <div>
+        <div className="mb-8 flex items-center justify-between">
+          <div className="h-9 w-48 animate-pulse rounded bg-neutral-200"></div>
+          <div className="h-10 w-40 animate-pulse rounded bg-neutral-200"></div>
+        </div>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {[...Array(8)].map((_, i) => (
+            <div key={i} className="animate-pulse">
+              <div className="aspect-square rounded-lg bg-neutral-200"></div>
+              <div className="mt-3 space-y-2">
+                <div className="h-4 w-20 rounded bg-neutral-200"></div>
+                <div className="h-5 w-full rounded bg-neutral-200"></div>
+                <div className="h-4 w-24 rounded bg-neutral-200"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    }>
+      <ProductsContent />
+    </Suspense>
   );
 }

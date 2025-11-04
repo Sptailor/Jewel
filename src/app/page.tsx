@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -11,18 +13,18 @@ export default function Home() {
               Discover timeless elegance and contemporary designs
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <a
+              <Link
                 href="/products"
                 className="rounded-md bg-neutral-900 px-8 py-3 text-white transition hover:bg-neutral-800"
               >
                 Shop Now
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/products?featured=true"
                 className="rounded-md border border-neutral-300 bg-white px-8 py-3 text-neutral-900 transition hover:bg-neutral-50"
               >
                 View Featured
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -35,7 +37,7 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {['Rings', 'Necklaces', 'Earrings', 'Bracelets'].map((category) => (
-              <a
+              <Link
                 key={category}
                 href={`/products?category=${category.toLowerCase()}`}
                 className="group relative h-64 overflow-hidden rounded-lg bg-neutral-200"
@@ -45,7 +47,7 @@ export default function Home() {
                     {category}
                   </h3>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

@@ -4,6 +4,8 @@ import { stripe } from '@/lib/stripe';
 import { prisma } from '@/lib/prisma';
 import { OrderStatus } from '@/generated/prisma';
 
+export const runtime = 'nodejs';
+
 function generateOrderNumber(): string {
   const prefix = 'ORD';
   const timestamp = Date.now().toString(36).toUpperCase();

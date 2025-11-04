@@ -3,6 +3,8 @@ import { auth } from '@/lib/auth';
 import { stripe } from '@/lib/stripe';
 import { prisma } from '@/lib/prisma';
 
+export const runtime = 'nodejs';
+
 export async function POST(request: Request) {
   try {
     const session = await auth();
