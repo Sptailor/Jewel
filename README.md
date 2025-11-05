@@ -34,222 +34,60 @@ A modern, full-stack ecommerce platform for a luxury jewellery store built with 
 - **UI Components**: Shadcn/ui with Radix UI
 - **State Management**: React Query (TanStack Query)
 - **Forms**: React Hook Form with Zod validation
-- **Icons**: Lucide React
 
 ### Backend
 - **API**: Next.js API Routes (Server Actions)
-- **Database**: PostgreSQL (Supabase/Neon)
+- **Database**: PostgreSQL (Neon)
 - **ORM**: Prisma
 - **Authentication**: NextAuth.js v5
 - **Password Hashing**: bcryptjs
 
 ### Payment & Services
 - **Payment Processing**: Stripe
-- **Image Storage**: Cloudinary
-- **Email**: Resend (configured)
 - **Deployment**: Vercel
 
-## Project Structure
+## Project Architecture
 
 ```
 jewels/
 ├── src/
 │   ├── app/                    # Next.js App Router
 │   │   ├── api/               # API routes
-│   │   │   ├── auth/          # Authentication endpoints
-│   │   │   ├── products/      # Product CRUD
-│   │   │   ├── orders/        # Order management
-│   │   │   ├── checkout/      # Stripe checkout
-│   │   │   └── webhooks/      # Stripe webhooks
 │   │   ├── admin/             # Admin dashboard
 │   │   ├── products/          # Product pages
 │   │   ├── cart/              # Shopping cart
 │   │   ├── checkout/          # Checkout flow
 │   │   └── auth/              # Auth pages
 │   ├── components/            # React components
-│   │   ├── ui/               # Shadcn components
-│   │   ├── layout/           # Layout components
-│   │   ├── products/         # Product components
-│   │   ├── cart/             # Cart components
-│   │   └── admin/            # Admin components
 │   ├── contexts/             # React contexts
 │   ├── lib/                  # Utilities & config
-│   ├── hooks/                # Custom React hooks
-│   └── types/                # TypeScript types
+│   └── hooks/                # Custom React hooks
 ├── prisma/
 │   └── schema.prisma         # Database schema
 └── public/                   # Static assets
 ```
 
-## Getting Started
+## Key Highlights
 
-### Prerequisites
-- Node.js 18+
-- PostgreSQL database (Supabase/Neon recommended)
-- Stripe account
-- npm or yarn
+### Database Schema
+Comprehensive data model with User, Product, Category, Cart, Order, Review, and ShippingAddress entities with proper relationships and constraints.
 
-### Installation
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/yourusername/luxjewels.git
-cd luxjewels
-```
-
-2. **Install dependencies**
-```bash
-npm install
-```
-
-3. **Set up environment variables**
-
-Create a `.env` file in the root directory:
-
-```env
-# Database
-DATABASE_URL="postgresql://user:password@host:5432/dbname"
-
-# NextAuth
-NEXTAUTH_URL="http://localhost:3000"
-NEXTAUTH_SECRET="your-secret-key-here"
-
-# App URL
-NEXT_PUBLIC_APP_URL="http://localhost:3000"
-
-# Stripe
-STRIPE_SECRET_KEY="sk_test_..."
-STRIPE_WEBHOOK_SECRET="whsec_..."
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="pk_test_..."
-
-# Optional: Google OAuth
-GOOGLE_CLIENT_ID="your_google_client_id"
-GOOGLE_CLIENT_SECRET="your_google_client_secret"
-
-# Optional: Email (Resend)
-RESEND_API_KEY="re_..."
-EMAIL_FROM="noreply@yourstore.com"
-
-# Optional: Cloudinary
-CLOUDINARY_CLOUD_NAME="your_cloud_name"
-CLOUDINARY_API_KEY="your_api_key"
-CLOUDINARY_API_SECRET="your_api_secret"
-```
-
-4. **Generate Prisma Client**
-```bash
-npx prisma generate
-```
-
-5. **Run database migrations**
-```bash
-npx prisma db push
-```
-
-6. **Seed the database (optional)**
-```bash
-npm run db:seed
-```
-
-7. **Start the development server**
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to see your app.
-
-## Available Scripts
-
-```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run start        # Start production server
-npm run lint         # Run ESLint
-npm run typecheck    # TypeScript type checking
-npm run format       # Format code with Prettier
-
-# Database
-npm run db:push      # Push schema to database
-npm run db:migrate   # Create migration
-npm run db:seed      # Seed database
-npm run db:studio    # Open Prisma Studio
-```
-
-## Database Schema
-
-Key models:
-- **User** - Customer accounts and admin users
-- **Product** - Product catalog with variants
-- **Category** - Product categories
-- **Cart & CartItem** - Shopping cart
-- **Order & OrderItem** - Order management
-- **Review** - Product reviews
-- **ShippingAddress** - Delivery addresses
-
-## Authentication
-
-- Credentials-based authentication (email/password)
-- Google OAuth (optional)
+### Authentication & Security
+- NextAuth.js v5 with multiple authentication providers
 - Role-based access control (USER/ADMIN)
 - Secure password hashing with bcrypt
-- JWT session management with NextAuth.js
+- JWT session management
 
-## Payment Integration
-
-- Stripe Checkout for secure payments
+### Payment Processing
+- Stripe Checkout integration
 - Webhook handling for payment events
-- Order creation on successful payment
-- Automatic inventory updates
+- Automatic order creation and inventory updates
 
-## Design Features
-
+### Design & UX
 - Mobile-first responsive design
-- Dark/light mode ready
 - Accessible UI components
 - Smooth animations and transitions
 - Optimized images with Next.js Image
-
-## Deployment
-
-### Deploy to Vercel
-
-1. **Push to GitHub**
-```bash
-git add .
-git commit -m "Initial commit"
-git push origin main
-```
-
-2. **Connect to Vercel**
-- Import your repository on [Vercel](https://vercel.com)
-- Configure environment variables in Project Settings
-- Deploy!
-
-3. **Required Environment Variables on Vercel**
-- `DATABASE_URL`
-- `NEXTAUTH_SECRET`
-- `NEXTAUTH_URL` (your Vercel URL)
-- `NEXT_PUBLIC_APP_URL` (your Vercel URL)
-- `STRIPE_SECRET_KEY`
-- `STRIPE_WEBHOOK_SECRET`
-- `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`
-
-4. **Set up Stripe Webhook**
-- Create webhook endpoint in Stripe Dashboard
-- Point to: `https://your-app.vercel.app/api/webhooks/stripe`
-- Add webhook secret to environment variables
-
-## Configuration
-
-### Stripe Setup
-1. Get API keys from [Stripe Dashboard](https://dashboard.stripe.com)
-2. Set up products in Stripe (optional)
-3. Configure webhook endpoint for production
-
-### Database Setup
-1. Create PostgreSQL database (Supabase/Neon recommended)
-2. Copy connection string to `.env`
-3. Run migrations with Prisma
 
 ## License
 
