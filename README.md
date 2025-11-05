@@ -7,7 +7,7 @@ A modern, full-stack ecommerce platform for a luxury jewellery store built with 
 ![Prisma](https://img.shields.io/badge/Prisma-6.13-2D3748?style=flat&logo=prisma)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38bdf8?style=flat&logo=tailwind-css)
 
-## 🌟 Features
+## Features
 
 ### Customer Features
 - **Product Browsing** - Browse products by category with filtering and sorting
@@ -25,7 +25,7 @@ A modern, full-stack ecommerce platform for a luxury jewellery store built with 
 - **Customer Management** - View and manage customer accounts
 - **Inventory Tracking** - Real-time stock management
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - **Framework**: Next.js 15 (App Router)
@@ -49,7 +49,7 @@ A modern, full-stack ecommerce platform for a luxury jewellery store built with 
 - **Email**: Resend (configured)
 - **Deployment**: Vercel
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 jewels/
@@ -81,7 +81,7 @@ jewels/
 └── public/                   # Static assets
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js 18+
@@ -158,7 +158,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to see your app.
 
-## 📝 Available Scripts
+## Available Scripts
 
 ```bash
 npm run dev          # Start development server
@@ -175,7 +175,7 @@ npm run db:seed      # Seed database
 npm run db:studio    # Open Prisma Studio
 ```
 
-## 🗄️ Database Schema
+## Database Schema
 
 Key models:
 - **User** - Customer accounts and admin users
@@ -186,7 +186,7 @@ Key models:
 - **Review** - Product reviews
 - **ShippingAddress** - Delivery addresses
 
-## 🔐 Authentication
+## Authentication
 
 - Credentials-based authentication (email/password)
 - Google OAuth (optional)
@@ -194,14 +194,14 @@ Key models:
 - Secure password hashing with bcrypt
 - JWT session management with NextAuth.js
 
-## 💳 Payment Integration
+## Payment Integration
 
 - Stripe Checkout for secure payments
 - Webhook handling for payment events
 - Order creation on successful payment
 - Automatic inventory updates
 
-## 🎨 Design Features
+## Design Features
 
 - Mobile-first responsive design
 - Dark/light mode ready
@@ -209,7 +209,7 @@ Key models:
 - Smooth animations and transitions
 - Optimized images with Next.js Image
 
-## 🚢 Deployment
+## Deployment
 
 ### Deploy to Vercel
 
@@ -239,7 +239,7 @@ git push origin main
 - Point to: `https://your-app.vercel.app/api/webhooks/stripe`
 - Add webhook secret to environment variables
 
-## 🔧 Configuration
+## Configuration
 
 ### Stripe Setup
 1. Get API keys from [Stripe Dashboard](https://dashboard.stripe.com)
@@ -251,31 +251,20 @@ git push origin main
 2. Copy connection string to `.env`
 3. Run migrations with Prisma
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
-## 🙏 Acknowledgments
+## Contact
 
-- [Next.js](https://nextjs.org/) - React framework
-- [Prisma](https://www.prisma.io/) - Database ORM
-- [Stripe](https://stripe.com/) - Payment processing
-- [Tailwind CSS](https://tailwindcss.com/) - Styling
-- [Shadcn/ui](https://ui.shadcn.com/) - UI components
-- [NextAuth.js](https://next-auth.js.org/) - Authentication
+### Suhail Tailor
 
-## 📞 Contact
+Email: [suheil.tailor@gmail.com](mailto:suheil.tailor@gmail.com)
 
-Your Name - [Your Email](mailto:your.email@example.com)
+GitHub: [@sptailor](https://github.com/sptailor)
 
-Project Link: [https://github.com/yourusername/luxjewels](https://github.com/yourusername/luxjewels)
-
-Live Demo: [https://luxjewels.vercel.app](https://luxjewels.vercel.app)
+Live Demo: [https://jewel-iy17.vercel.app](https://jewel-iy17.vercel.app)
 
 ---
 
-**Built with ❤️ using Next.js and TypeScript**
+Built with Next.js and TypeScript
