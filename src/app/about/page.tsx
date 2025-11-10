@@ -22,7 +22,7 @@ export default function AboutPage() {
             <div className="space-y-4 text-neutral-600">
               <p>
                 LuxJewels was born from a passion for creating extraordinary pieces that tell
-                unique stories. We believe that jewelry is more than just an accessory—it's a
+                unique stories. We believe that jewelry is more than just an accessory, it's a
                 celebration of life's most meaningful moments.
               </p>
               <p>
@@ -96,12 +96,12 @@ export default function AboutPage() {
       <div className="mb-16">
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
           <div className="order-2 md:order-1">
-            <div className="relative overflow-hidden rounded-lg">
+            <div className="relative overflow-hidden rounded-lg aspect-square max-w-md mx-auto">
               <Image
                 src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1200&auto=format&fit=crop"
                 alt="Jeweler crafting fine jewelry"
-                width={600}
-                height={600}
+                width={400}
+                height={400}
                 className="h-full w-full object-cover"
               />
             </div>
@@ -117,7 +117,7 @@ export default function AboutPage() {
               <p>
                 We work with ethically sourced precious metals and certified gemstones,
                 supporting sustainable practices throughout our supply chain. Your jewelry
-                is not just beautiful—it's responsibly made.
+                is not just beautiful, it's responsibly made.
               </p>
             </div>
           </div>
