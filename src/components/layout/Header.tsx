@@ -63,6 +63,9 @@ export default function Header() {
             <Link href="/products?category=bracelets" className="text-sm font-medium hover:text-neutral-600">
               Bracelets
             </Link>
+            <Link href="/about" className="text-sm font-medium hover:text-neutral-600">
+              About Us
+            </Link>
           </nav>
 
           <div className="flex items-center space-x-4">
@@ -193,6 +196,13 @@ export default function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               Bracelets
+            </Link>
+            <Link
+              href="/about"
+              className="block px-3 py-2 text-base font-medium hover:bg-neutral-50"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About Us
             </Link>
           </div>
         </nav>
