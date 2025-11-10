@@ -10,7 +10,7 @@ export default function AboutPage() {
           About LuxJewels
         </h1>
         <p className="mx-auto max-w-2xl text-lg text-neutral-600">
-          Crafting timeless elegance and celebrating life's precious moments since our founding
+          Crafting timeless elegance and celebrating life&apos;s precious moments since our founding
         </p>
       </div>
 
@@ -22,8 +22,8 @@ export default function AboutPage() {
             <div className="space-y-4 text-neutral-600">
               <p>
                 LuxJewels was born from a passion for creating extraordinary pieces that tell
-                unique stories. We believe that jewelry is more than just an accessory, it's a
-                celebration of life's most meaningful moments.
+                unique stories. We believe that jewelry is more than just an accessory, it&apos;s a
+                celebration of life&apos;s most meaningful moments.
               </p>
               <p>
                 Every piece in our collection is carefully curated to reflect the perfect balance
@@ -32,7 +32,7 @@ export default function AboutPage() {
               </p>
               <p>
                 From engagement rings that symbolize eternal love to statement necklaces that
-                capture individual style, we're dedicated to helping you find jewelry that
+                capture individual style, we&apos;re dedicated to helping you find jewelry that
                 resonates with your personal journey.
               </p>
             </div>
@@ -117,7 +117,7 @@ export default function AboutPage() {
               <p>
                 We work with ethically sourced precious metals and certified gemstones,
                 supporting sustainable practices throughout our supply chain. Your jewelry
-                is not just beautiful, it's responsibly made.
+                is not just beautiful, it&apos;s responsibly made.
               </p>
             </div>
           </div>
@@ -128,7 +128,7 @@ export default function AboutPage() {
       <div className="rounded-lg bg-neutral-900 px-8 py-12 text-center text-white">
         <h2 className="mb-4 text-3xl font-bold">Our Promise to You</h2>
         <p className="mx-auto max-w-3xl text-lg text-neutral-300">
-          At LuxJewels, we're committed to providing an exceptional experience from browsing
+          At LuxJewels, we&apos;re committed to providing an exceptional experience from browsing
           to purchase and beyond. Every piece comes with our quality guarantee, free shipping,
           and expert customer support to ensure your complete satisfaction.
         </p>
