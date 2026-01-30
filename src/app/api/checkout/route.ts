@@ -6,6 +6,12 @@ import { prisma } from '@/lib/prisma';
 export const runtime = 'nodejs';
 
 export async function POST(request: Request) {
+  // Demo mode - disable checkout
+  return NextResponse.json(
+    { error: 'Checkout disabled - demo mode' },
+    { status: 403 }
+  );
+
   try {
     const session = await auth();
     if (!session?.user?.id) {
