@@ -9,6 +9,7 @@ import { ChevronLeft, CreditCard, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import DemoModal from '@/components/demo/DemoModal';
+import { IS_DEMO_MODE } from '@/config/demo';
 
 export default function CheckoutPage() {
   const router = useRouter();
