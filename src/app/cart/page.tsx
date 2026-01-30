@@ -1,13 +1,16 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Minus, Plus, X, ShoppingCart } from 'lucide-react';
 import { useCart } from '@/contexts/CartContext';
 import { formatCurrency } from '@/utils/format';
+import DemoModal from '@/components/demo/DemoModal';
 
 export default function CartPage() {
   const { items, updateQuantity, removeItem, getTotalPrice, clearCart } = useCart();
+  const [showDemoModal, setShowDemoModal] = useState(false);
 
   if (items.length === 0) {
     return (
@@ -148,12 +151,12 @@ export default function CartPage() {
               </div>
             </div>
 
-            <Link
-              href="/checkout"
+            <button
+              onClick={() => setShowDemoModal(true)}
               className="block w-full rounded-md bg-neutral-900 py-3 text-center text-white hover:bg-neutral-800"
             >
               Proceed to Checkout
-            </Link>
+            </button>
 
             <p className="mt-4 text-center text-sm text-neutral-500">
               Secure checkout powered by Stripe
@@ -161,6 +164,8 @@ export default function CartPage() {
           </div>
         </div>
       </div>
+
+      <DemoModal isOpen={showDemoModal} onClose={() => setShowDemoModal(false)} />
     </div>
   );
 }
