@@ -95,8 +95,8 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: true,
       images: [
-        { url: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&h=800&fit=crop&q=80', alt: 'Diamond Solitaire Ring', order: 0 },
-        { url: 'https://images.unsplash.com/photo-1598560917505-59a3ad559071?w=800&h=800&fit=crop&q=80', alt: 'Diamond Solitaire Ring Side View', order: 1 },
+        { url: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&h=800&fit=crop', alt: 'Diamond Solitaire Ring', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1598560917505-59a3ad559071?w=800&h=800&fit=crop', alt: 'Diamond Solitaire Ring Side View', order: 1 },
       ],
       variants: [
         { name: 'Size 5', sku: 'RING-001-5', price: 4999.99, stock: 3, attributes: { size: '5' } },
@@ -116,7 +116,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: false,
       images: [
-        { url: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=800&h=800&fit=crop&q=80', alt: 'Sapphire and Diamond Ring', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=800&h=800&fit=crop', alt: 'Sapphire and Diamond Ring', order: 0 },
       ],
       variants: [
         { name: 'Size 5', sku: 'RING-002-5', price: 2999.99, stock: 2, attributes: { size: '5' } },
@@ -134,7 +134,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: false,
       images: [
-        { url: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&h=800&fit=crop&q=80', alt: 'Rose Gold Band', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&h=800&fit=crop', alt: 'Rose Gold Band', order: 0 },
       ],
       variants: [
         { name: 'Size 6', sku: 'RING-003-6', price: 799.99, stock: 10, attributes: { size: '6' } },
@@ -156,7 +156,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: true,
       images: [
-        { url: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&h=800&fit=crop&q=80', alt: 'Pearl Strand Necklace', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&h=800&fit=crop', alt: 'Pearl Strand Necklace', order: 0 },
       ],
       variants: [
         { name: '16 inch', sku: 'NECK-001-16', price: 1199.99, stock: 4, attributes: { length: '16"' } },
@@ -174,7 +174,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: true,
       images: [
-        { url: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&h=800&fit=crop&q=80', alt: 'Diamond Tennis Necklace', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&h=800&fit=crop', alt: 'Diamond Tennis Necklace', order: 0 },
       ],
       variants: [
         { name: 'Standard', sku: 'NECK-002-STD', price: 8999.99, stock: 2, attributes: {} },
@@ -190,7 +190,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: false,
       images: [
-        { url: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=800&h=800&fit=crop&q=80', alt: 'Gold Heart Pendant', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=800&h=800&fit=crop', alt: 'Gold Heart Pendant', order: 0 },
       ],
       variants: [
         { name: 'Standard', sku: 'NECK-003-STD', price: 499.99, stock: 15, attributes: {} },
@@ -209,7 +209,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: true,
       images: [
-        { url: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&h=800&fit=crop&q=80', alt: 'Diamond Stud Earrings', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&h=800&fit=crop', alt: 'Diamond Stud Earrings', order: 0 },
       ],
       variants: [
         { name: '0.5 ct tw', sku: 'EAR-001-05', price: 999.99, stock: 8, attributes: { carats: '0.5' } },
@@ -227,7 +227,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: false,
       images: [
-        { url: 'https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=800&h=800&fit=crop&q=80', alt: 'Pearl Drop Earrings', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=800&h=800&fit=crop', alt: 'Pearl Drop Earrings', order: 0 },
       ],
       variants: [
         { name: 'Standard', sku: 'EAR-002-STD', price: 299.99, stock: 12, attributes: {} },
@@ -243,7 +243,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: false,
       images: [
-        { url: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=800&h=800&fit=crop&q=80', alt: 'Gold Hoop Earrings', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=800&h=800&fit=crop', alt: 'Gold Hoop Earrings', order: 0 },
       ],
       variants: [
         { name: '20mm', sku: 'EAR-003-20', price: 399.99, stock: 10, attributes: { diameter: '20mm' } },
@@ -264,7 +264,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: true,
       images: [
-        { url: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=800&h=800&fit=crop&q=80', alt: 'Tennis Bracelet', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=800&h=800&fit=crop', alt: 'Tennis Bracelet', order: 0 },
       ],
       variants: [
         { name: '6.5 inch', sku: 'BRAC-001-65', price: 4999.99, stock: 3, attributes: { length: '6.5"' } },
@@ -282,7 +282,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: false,
       images: [
-        { url: 'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=800&h=800&fit=crop&q=80', alt: 'Gold Chain Bracelet', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=800&h=800&fit=crop', alt: 'Gold Chain Bracelet', order: 0 },
       ],
       variants: [
         { name: '7 inch', sku: 'BRAC-002-70', price: 899.99, stock: 7, attributes: { length: '7"' } },
@@ -299,7 +299,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: false,
       images: [
-        { url: 'https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=800&h=800&fit=crop&q=80', alt: 'Silver Bangle Set', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=800&h=800&fit=crop', alt: 'Silver Bangle Set', order: 0 },
       ],
       variants: [
         { name: 'Small', sku: 'BRAC-003-S', price: 349.99, stock: 6, attributes: { size: 'Small' } },
