@@ -2,15 +2,18 @@ import { NextResponse } from 'next/server';
 import { auth } from '@/lib/auth';
 import { stripe } from '@/lib/stripe';
 import { prisma } from '@/lib/prisma';
+import { IS_DEMO_MODE } from '@/config/demo';
 
 export const runtime = 'nodejs';
 
 export async function POST(request: Request) {
   // Demo mode - disable checkout
-  return NextResponse.json(
-    { error: 'Checkout disabled - demo mode' },
-    { status: 403 }
-  );
+  if (IS_DEMO_MODE) {
+    return NextResponse.json(
+      { error: 'Checkout disabled - demo mode' },
+      { status: 403 }
+    );
+  }
 
   try {
     const session = await auth();

@@ -3,6 +3,7 @@ import { auth } from '@/lib/auth';
 import { stripe } from '@/lib/stripe';
 import { prisma } from '@/lib/prisma';
 import { OrderStatus } from '@/generated/prisma';
+import { IS_DEMO_MODE } from '@/config/demo';
 
 export const runtime = 'nodejs';
 
@@ -15,10 +16,12 @@ function generateOrderNumber(): string {
 
 export async function POST(request: Request) {
   // Demo mode - disable order creation
-  return NextResponse.json(
-    { error: 'Order creation disabled - demo mode' },
-    { status: 403 }
-  );
+  if (IS_DEMO_MODE) {
+    return NextResponse.json(
+      { error: 'Order creation disabled - demo mode' },
+      { status: 403 }
+    );
+  }
 
   try {
     const session = await auth();

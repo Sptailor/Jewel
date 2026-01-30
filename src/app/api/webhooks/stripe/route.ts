@@ -2,12 +2,15 @@ import { NextRequest, NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
 import { prisma } from '@/lib/prisma';
 import { OrderStatus } from '@/generated/prisma';
+import { IS_DEMO_MODE } from '@/config/demo';
 
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
 
 export async function POST(request: NextRequest) {
   // Demo mode - disable webhooks
-  return NextResponse.json({ received: true, demo: true });
+  if (IS_DEMO_MODE) {
+    return NextResponse.json({ received: true, demo: true });
+  }
 
   try {
     const body = await request.text();
