@@ -159,7 +159,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: true,
       images: [
-        { url: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&h=800&fit=crop', alt: 'Diamond Tennis Necklace', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=800&h=800&fit=crop', alt: 'Diamond Tennis Necklace', order: 0 },
       ],
       variants: [
         { name: 'Standard', sku: 'NECK-002-STD', price: 8999.99, stock: 2, attributes: {} },
@@ -249,7 +249,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: true,
       images: [
-        { url: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=800&h=800&fit=crop', alt: 'Tennis Bracelet', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&h=800&fit=crop', alt: 'Tennis Bracelet', order: 0 },
       ],
       variants: [
         { name: '6.5 inch', sku: 'BRAC-001-65', price: 4999.99, stock: 3, attributes: { length: '6.5"' } },
@@ -284,7 +284,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: false,
       images: [
-        { url: 'https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=800&h=800&fit=crop', alt: 'Silver Bangle Set', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=800&h=800&fit=crop', alt: 'Silver Bangle Set', order: 0 },
       ],
       variants: [
         { name: 'Small', sku: 'BRAC-003-S', price: 349.99, stock: 6, attributes: { size: 'Small' } },
