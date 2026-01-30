@@ -89,6 +89,40 @@ Comprehensive data model with User, Product, Category, Cart, Order, Review, and 
 - Smooth animations and transitions
 - Optimized images with Next.js Image
 
+## Demo Mode
+
+This application is currently in **demo mode** for portfolio showcase purposes. When demo mode is active:
+
+- ✅ **Fully Functional**: Product browsing, cart management, and user interface
+- ❌ **Disabled**: Checkout, payment processing, and order creation
+- 📢 **User Notice**: Professional modal displayed when attempting checkout
+
+### What Works in Demo Mode
+- Browse all products and categories
+- Add/remove items from shopping cart
+- Adjust quantities and view cart totals
+- Explore the user interface and navigation
+
+### What's Disabled in Demo Mode
+- Stripe checkout session creation
+- Payment processing
+- Order creation and database updates
+- Stripe webhook handling
+
+### For Developers: Disabling Demo Mode
+
+To enable full checkout functionality (for development or production):
+
+1. Open `/src/config/demo.ts`
+2. Change `IS_DEMO_MODE` from `true` to `false`:
+   ```typescript
+   export const IS_DEMO_MODE = false;
+   ```
+3. Ensure all environment variables are configured (Stripe keys, database, etc.)
+4. Restart the development server
+
+**Note**: All products are AI-generated for demonstration purposes only.
+
 ## License
 
 This project is licensed under the MIT License.
