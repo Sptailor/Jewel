@@ -6,6 +6,9 @@ import { OrderStatus } from '@/generated/prisma';
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
 
 export async function POST(request: NextRequest) {
+  // Demo mode - disable webhooks
+  return NextResponse.json({ received: true, demo: true });
+
   try {
     const body = await request.text();
     const signature = request.headers.get('stripe-signature')!;
