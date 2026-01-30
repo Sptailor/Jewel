@@ -8,6 +8,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import { ChevronLeft, CreditCard, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import DemoModal from '@/components/demo/DemoModal';
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -15,6 +16,7 @@ export default function CheckoutPage() {
   const { items, getTotalPrice } = useCart();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showDemoModal, setShowDemoModal] = useState(false);
 
   // Redirect to login if not authenticated
   useEffect(() => {
@@ -32,49 +34,7 @@ export default function CheckoutPage() {
   }, [items, router, isLoading]);
 
   const handleCheckout = async () => {
-    try {
-      setIsLoading(true);
-      setError(null);
-
-      // Create checkout session
-      const response = await fetch('/api/checkout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          items: items.map(item => ({
-            productId: item.productId,
-            variantId: item.variantId,
-            quantity: item.quantity,
-          })),
-        }),
-      });
-
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.error || 'Failed to create checkout session');
-      }
-
-      const { sessionId } = await response.json();
-
-      // Redirect to Stripe Checkout
-      const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
-      if (!stripe) {
-        throw new Error('Failed to load Stripe');
-      }
-
-      const { error: stripeError } = await stripe.redirectToCheckout({
-        sessionId,
-      });
-
-      if (stripeError) {
-        throw new Error(stripeError.message);
-      }
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong');
-      setIsLoading(false);
-    }
+    setShowDemoModal(true);
   };
 
   if (status === 'loading' || (!session && status !== 'unauthenticated')) {
@@ -197,6 +157,8 @@ export default function CheckoutPage() {
           </div>
         </div>
       </div>
+
+      <DemoModal isOpen={showDemoModal} onClose={() => setShowDemoModal(false)} />
     </div>
   );
 }
