@@ -1,14 +1,16 @@
 'use client';
 
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { X, Minus, Plus, ShoppingCart } from 'lucide-react';
 import { useCart } from '@/contexts/CartContext';
 import { formatCurrency } from '@/utils/format';
+import DemoModal from '@/components/demo/DemoModal';
 
 export default function CartSidebar() {
   const { items, updateQuantity, removeItem, getTotalPrice, isOpen, setIsOpen } = useCart();
+  const [showDemoModal, setShowDemoModal] = useState(false);
 
   return (
     <>
@@ -139,13 +141,12 @@ export default function CartSidebar() {
                 <span>{formatCurrency(getTotalPrice())}</span>
               </div>
               <div className="space-y-2">
-                <Link
-                  href="/checkout"
-                  onClick={() => setIsOpen(false)}
+                <button
+                  onClick={() => setShowDemoModal(true)}
                   className="block w-full rounded-md bg-neutral-900 py-3 text-center text-white hover:bg-neutral-800"
                 >
                   Checkout
-                </Link>
+                </button>
                 <button
                   onClick={() => setIsOpen(false)}
                   className="block w-full rounded-md border border-neutral-300 py-3 text-center hover:bg-neutral-50"
@@ -160,6 +161,8 @@ export default function CartSidebar() {
           )}
         </div>
       </div>
+
+      <DemoModal isOpen={showDemoModal} onClose={() => setShowDemoModal(false)} />
     </>
   );
 }
