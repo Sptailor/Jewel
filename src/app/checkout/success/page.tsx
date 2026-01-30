@@ -22,38 +22,9 @@ export default function CheckoutSuccessPage({
   const [orderNumber, setOrderNumber] = useState<string | null>(null);
 
   useEffect(() => {
-    const createOrder = async () => {
-      if (!params.session_id) {
-        router.push('/');
-        return;
-      }
-
-      try {
-        // Create order in database
-        const response = await fetch('/api/orders', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            sessionId: params.session_id,
-          }),
-        });
-
-        if (response.ok) {
-          const data = await response.json();
-          setOrderNumber(data.orderNumber);
-          clearCart(); // Clear the cart after successful order
-        }
-      } catch (error) {
-        console.error('Failed to create order:', error);
-      } finally {
-        setIsProcessing(false);
-      }
-    };
-
-    createOrder();
-  }, [params.session_id, clearCart, router]);
+    // Demo mode - redirect to cart
+    router.push('/cart');
+  }, [router]);
 
   if (isProcessing) {
     return (
