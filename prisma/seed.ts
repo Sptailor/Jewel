@@ -190,7 +190,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: false,
       images: [
-        { url: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&h=800&fit=crop', alt: 'Gold Pendant Necklace', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1599458448043-41f2e1b2b1f4?w=800&h=800&fit=crop', alt: 'Gold Pendant Necklace', order: 0 },
       ],
       variants: [
         { name: 'Standard', sku: 'NECK-003-STD', price: 499.99, stock: 15, attributes: {} },
@@ -264,7 +264,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: true,
       images: [
-        { url: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&h=800&fit=crop', alt: 'Diamond Bracelet', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1611652022413-94e4d4674b36?w=800&h=800&fit=crop', alt: 'Diamond Bracelet', order: 0 },
       ],
       variants: [
         { name: '6.5 inch', sku: 'BRAC-001-65', price: 4999.99, stock: 3, attributes: { length: '6.5"' } },
@@ -282,7 +282,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: false,
       images: [
-        { url: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=800&h=800&fit=crop', alt: 'Gold Bangle', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220b?w=800&h=800&fit=crop', alt: 'Gold Bangle', order: 0 },
       ],
       variants: [
         { name: 'Small', sku: 'BRAC-002-S', price: 899.99, stock: 7, attributes: { size: 'Small' } },
@@ -299,7 +299,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: false,
       images: [
-        { url: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&h=800&fit=crop', alt: 'Silver Cuff Bracelet', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1611652022419-a9419f74343e?w=800&h=800&fit=crop', alt: 'Silver Cuff Bracelet', order: 0 },
       ],
       variants: [
         { name: 'Small', sku: 'BRAC-003-S', price: 349.99, stock: 6, attributes: { size: 'Small' } },
