@@ -181,16 +181,16 @@ async function main() {
       ],
     },
     {
-      name: 'Gold Heart Pendant',
-      slug: 'gold-heart-pendant',
-      description: 'Delicate heart pendant in 14k yellow gold with box chain.',
+      name: 'Gold Pendant Necklace',
+      slug: 'gold-pendant-necklace',
+      description: 'Delicate pendant necklace in 14k yellow gold with adjustable chain.',
       sku: 'NECK-003',
       price: 499.99,
       categoryId: categories[1].id,
       status: 'ACTIVE' as const,
       featured: false,
       images: [
-        { url: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=800&h=800&fit=crop', alt: 'Gold Heart Pendant', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&h=800&fit=crop', alt: 'Gold Pendant Necklace', order: 0 },
       ],
       variants: [
         { name: 'Standard', sku: 'NECK-003-STD', price: 499.99, stock: 15, attributes: {} },
@@ -254,9 +254,9 @@ async function main() {
 
     // Bracelets
     {
-      name: 'Tennis Bracelet',
-      slug: 'tennis-bracelet',
-      description: '3 carat total weight diamond tennis bracelet in 14k white gold.',
+      name: 'Diamond Bracelet',
+      slug: 'diamond-bracelet',
+      description: '3 carat total weight diamond bracelet in 14k white gold.',
       sku: 'BRAC-001',
       price: 4999.99,
       comparePrice: 5999.99,
@@ -264,7 +264,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: true,
       images: [
-        { url: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=800&h=800&fit=crop', alt: 'Tennis Bracelet', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&h=800&fit=crop', alt: 'Diamond Bracelet', order: 0 },
       ],
       variants: [
         { name: '6.5 inch', sku: 'BRAC-001-65', price: 4999.99, stock: 3, attributes: { length: '6.5"' } },
@@ -273,33 +273,33 @@ async function main() {
       ],
     },
     {
-      name: 'Gold Chain Bracelet',
-      slug: 'gold-chain-bracelet',
-      description: 'Elegant chain bracelet in 14k yellow gold with lobster clasp.',
+      name: 'Gold Bangle',
+      slug: 'gold-bangle',
+      description: 'Elegant solid gold bangle in 14k yellow gold.',
       sku: 'BRAC-002',
       price: 899.99,
       categoryId: categories[3].id,
       status: 'ACTIVE' as const,
       featured: false,
       images: [
-        { url: 'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=800&h=800&fit=crop', alt: 'Gold Chain Bracelet', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=800&h=800&fit=crop', alt: 'Gold Bangle', order: 0 },
       ],
       variants: [
-        { name: '7 inch', sku: 'BRAC-002-70', price: 899.99, stock: 7, attributes: { length: '7"' } },
-        { name: '8 inch', sku: 'BRAC-002-80', price: 899.99, stock: 5, attributes: { length: '8"' } },
+        { name: 'Small', sku: 'BRAC-002-S', price: 899.99, stock: 7, attributes: { size: 'Small' } },
+        { name: 'Medium', sku: 'BRAC-002-M', price: 899.99, stock: 5, attributes: { size: 'Medium' } },
       ],
     },
     {
-      name: 'Silver Bangle Set',
-      slug: 'silver-bangle-set',
-      description: 'Set of 3 sterling silver bangles with different textures.',
+      name: 'Silver Cuff Bracelet',
+      slug: 'silver-cuff-bracelet',
+      description: 'Modern sterling silver cuff bracelet with minimalist design.',
       sku: 'BRAC-003',
       price: 349.99,
       categoryId: categories[3].id,
       status: 'ACTIVE' as const,
       featured: false,
       images: [
-        { url: 'https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=800&h=800&fit=crop', alt: 'Silver Bangle Set', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&h=800&fit=crop', alt: 'Silver Cuff Bracelet', order: 0 },
       ],
       variants: [
         { name: 'Small', sku: 'BRAC-003-S', price: 349.99, stock: 6, attributes: { size: 'Small' } },
