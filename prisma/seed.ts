@@ -282,7 +282,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: false,
       images: [
-        { url: 'https://images.unsplash.com/photo-ynts2uDw1ws?w=800&h=800&fit=crop', alt: 'Gold Bangle', order: 0 },
+        { url: 'https://images.unsplash.com/photo-1728381031272-ba3f537feadd?w=800&h=800&fit=crop', alt: 'Gold Bangle', order: 0 },
       ],
       variants: [
         { name: 'Small', sku: 'BRAC-002-S', price: 899.99, stock: 7, attributes: { size: 'Small' } },
