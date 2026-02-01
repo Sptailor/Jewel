@@ -227,7 +227,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: false,
       images: [
-        { url: 'https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=800&h=800&fit=crop', alt: 'Pearl Drop Earrings', order: 0 },
+        { url: 'https://images.unsplash.com/photo-YIdCWJWtm2I?w=800&h=800&fit=crop', alt: 'Pearl Drop Earrings', order: 0 },
       ],
       variants: [
         { name: 'Standard', sku: 'EAR-002-STD', price: 299.99, stock: 12, attributes: {} },
