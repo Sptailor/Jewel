@@ -174,7 +174,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: true,
       images: [
-        { url: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&h=800&fit=crop', alt: 'Diamond Tennis Necklace', order: 0 },
+        { url: 'https://images.unsplash.com/photo-h0evAOsNNtg?w=800&h=800&fit=crop', alt: 'Diamond Tennis Necklace', order: 0 },
       ],
       variants: [
         { name: 'Standard', sku: 'NECK-002-STD', price: 8999.99, stock: 2, attributes: {} },
