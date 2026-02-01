@@ -299,7 +299,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: false,
       images: [
-        { url: 'https://images.unsplash.com/photo-1611652022419-a9419f74343e?w=800&h=800&fit=crop', alt: 'Silver Cuff Bracelet', order: 0 },
+        { url: 'https://images.unsplash.com/photo-H3qwsFi5CDA?w=800&h=800&fit=crop', alt: 'Silver Cuff Bracelet', order: 0 },
       ],
       variants: [
         { name: 'Small', sku: 'BRAC-003-S', price: 349.99, stock: 6, attributes: { size: 'Small' } },
