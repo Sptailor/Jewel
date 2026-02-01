@@ -121,7 +121,7 @@ To enable full checkout functionality (for development or production):
 3. Ensure all environment variables are configured (Stripe keys, database, etc.)
 4. Restart the development server
 
-**Note**: All products are AI-generated for demonstration purposes only.
+**Note**: All products and images are AI-generated/sourced for demonstration purposes only.
 
 ## License
 
