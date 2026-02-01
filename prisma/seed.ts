@@ -190,7 +190,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: false,
       images: [
-        { url: 'https://images.unsplash.com/photo-1599458448043-41f2e1b2b1f4?w=800&h=800&fit=crop', alt: 'Gold Pendant Necklace', order: 0 },
+        { url: 'https://images.unsplash.com/photo-u1DhoJNcmqM?w=800&h=800&fit=crop', alt: 'Gold Pendant Necklace', order: 0 },
       ],
       variants: [
         { name: 'Standard', sku: 'NECK-003-STD', price: 499.99, stock: 15, attributes: {} },
