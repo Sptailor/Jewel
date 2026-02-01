@@ -264,7 +264,7 @@ async function main() {
       status: 'ACTIVE' as const,
       featured: true,
       images: [
-        { url: 'https://images.unsplash.com/photo-1611652022413-94e4d4674b36?w=800&h=800&fit=crop', alt: 'Diamond Bracelet', order: 0 },
+        { url: 'https://images.unsplash.com/photo-jm4cbOKYk30?w=800&h=800&fit=crop', alt: 'Diamond Bracelet', order: 0 },
       ],
       variants: [
         { name: '6.5 inch', sku: 'BRAC-001-65', price: 4999.99, stock: 3, attributes: { length: '6.5"' } },
